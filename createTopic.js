@@ -3,9 +3,9 @@ module.exports = (AWS, topicName) => {
       try {
         const createTopic = new AWS.SNS({ apiVersion: "2010-03-31" })
           .createTopic({
-            Name: topicName,
+            Name: topicName
           })
-          .promise()
+          .promise();
         createTopic
           .then(data => {
             console.log(`Created Topic - ${topicName}`)
